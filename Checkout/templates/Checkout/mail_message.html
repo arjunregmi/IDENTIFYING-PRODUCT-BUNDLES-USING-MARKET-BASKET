@@ -1,0 +1,48 @@
+<html>
+    <head>
+        
+        <!--bootstrap4 cdn-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     
+    </head>
+
+    <body>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/274234978_361633778917630_6866515177973184692_n.png?_nc_cat=101&ccb=1-5&_nc_sid=aee45a&_nc_ohc=NYR4IBR9T5oAX9KqSKc&_nc_oc=AQltESGfTkD0bYQKcVaLl8TtSkDPcVkOBmCvUiSSsmkASySrp_C4Ck-E8BemyhaOWzA9d-bmgpTPgkauAVymihQa&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKoBqhOK7RNEZVheOmszu7L9quoWbS5EGG7O-MJr-1tlA&oe=623E4D75" height=45 width=130 style="display:block; margin-left:auto; margin-right:auto">
+        <div style="margin:auto;width:50%">
+            <div style="background-color: #1db845; padding-top: 30px; padding-bottom: 30px;text-align: center; color:white;"><h4>Thank you for your order.</h4></div>
+            <br>
+            <p>Hi {{ username }},</p>
+            <p>Just to let you know — we've received your order #{{ order_id }}, and it is now being processed:</p>
+            <p>Pay with cash upon delivery</p>
+            <strong style="color: #1db845">[Order #{{ order_id }}]({{ date }})</strong>
+            <div class="cart"></div>
+            <table style="border:1px solid #ddd;width: 100%; padding-left:20px; text-align: left;">
+                <tr>
+                    <th style="border-bottom: 1px solid #ddd;">Product</th>
+                    <th style="border-bottom: 1px solid #ddd;">Quantity</th>
+                </tr>
+                {% for item,qty in product_name_details %}
+                <tr>
+                    <td>{{ item }}</td>
+                    <td>{{ qty }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <strong>Total: {{ total }}</strong>
+
+            <hr>
+            <strong style="color: #1db845">Billing Address</strong>
+            <div style="border:1px solid cadetblue">
+                <div style="font-style: italic;">
+                    <ul style="list-style-type: none; padding:0">
+                        <li>{{ username }}</li>
+                            <li>{{ address }}</li>
+                            <li>{{ city }}</li>
+                            <li>{{ province }}</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Thanks for using ARBIRA</p>
+        </div>
+    </body>
+</html>
